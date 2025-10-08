@@ -1,0 +1,225 @@
+
+nav{
+    background-color: rgba(0, 0, 0,0.9);
+    padding: 20px 10px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+    
+    
+}
+.topBar{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+    color: rgb(235, 129, 7);
+    
+}
+.logoText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.navBtns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    
+}
+.navBtns button{
+    color: rgb(235, 129, 7);
+    background-color: transparent;
+    padding: 5px 20px 8px 20px;
+    border: none;
+    border-bottom: 1px solid rgb(235, 129, 7);
+    transition: .1s;
+    
+}
+.navBtns button:hover{
+    border-bottom: 8px solid rgb(235, 129, 7);
+    
+    cursor: pointer;
+    
+}
+
+.basket{
+    color: rgb(235, 129, 7);
+    background-color: transparent;
+}
+.login{
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+.searchingBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    
+
+}
+input{
+    border: none;
+    border-bottom: 2px solid rgb(235, 129, 7);
+    background-color: transparent;
+    padding: 10px;
+    font-size: 19px;
+    color: thistle;
+    outline: none;
+}
+
+.bottomBar{
+    padding: 10px;
+    align-self: center;
+    
+}
+
+.bottomBarButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.bottomBarButtons button{
+    background-color: transparent;
+    border: none;
+    
+    background-color: transparent;
+    color: whitesmoke;
+    font-size: 18px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    transition: .3s;
+
+}
+.bottomBarButtons button:hover{
+    border-bottom: 2px solid rgb(235, 129, 7);
+    color: rgb(235, 129, 7);
+}
+.normalMenuBar{
+    display: none;
+    background-color: transparent;
+    border: none;
+}
+.scrollMenu{
+    cursor: pointer;
+    color:rgb(235, 129, 7) ;
+    position: relative;
+}
+.scrollMenuWindow{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    justify-content: center;
+    background-color: rgba(0, 0, 0);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,100%);
+    display: none;
+    
+    
+    
+}
+
+.scrollHelp,.scrollFavourites{
+    flex-basis: 50%;
+    padding: 20px;
+    color: rgb(235, 129, 7);
+    background-color: transparent;
+    cursor: pointer;
+   
+}
+
+.scrollLogin{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    color: rgb(235, 129, 7);
+    background-color: transparent;
+    
+    font-size: 20px;
+    cursor: pointer;
+
+}
+.scrollLogin:hover{
+    box-shadow: 0 0 0px 5px rgb(235, 129, 7);
+}
+
+.scrollMenuBtns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.scrollMenuBtns button{
+    width: 100%;
+    padding: 30px 20px;
+    color: rgb(235, 129, 7);
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    
+    
+}
+.scrollMenuBtns button:hover{
+    box-shadow: 0 0 0px 5px rgb(235, 129, 7);
+}
+.bottomBar{
+    margin-top: 10px;
+    width: 100%;
+    border-top: 2px solid rgb(0, 0, 0);
+    padding-top: 20px;
+}
+
+
+
+
+@media (max-width:1024px){
+    .login,.help,.favourites{
+        display: none;
+    }
+    .bottomBar{
+        display: none;
+    }
+    .scrollMenu{
+        display: none;
+    }
+    .searchingBar{
+        display: none;
+    }
+    .normalMenuBar{
+        display: block;
+    }
+    .logoText span{
+        font-size: 20px
+    }
+}
