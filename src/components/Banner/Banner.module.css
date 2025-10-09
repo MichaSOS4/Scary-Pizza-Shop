@@ -6,11 +6,10 @@
     background-position: center;
     height: 80vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
+    
     z-index: -998;
+    position: relative;
+    overflow: hidden;
 }
 .back{
     position: absolute;
@@ -19,26 +18,49 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: -999;
 }
+
 .bannerTitle{
     color: aliceblue;
-    width: 40%;
-    font-size: 60px;
-    margin-top: 20px;
+    width: 100%;
+    font-size: 45px;
+    
     text-transform: uppercase;
-    margin-left: 30px;
+    
     transition: .3s;
+     position: absolute;
+    top: 50%;
+    left:0%;
+    text-align: center;
+}
+.bannerTitleTwo{
+    color: aliceblue;
+    width: 100%;
+    font-size: 45px;
     
+    text-transform: uppercase;
     
-
+    transition: .3s;
+     position: absolute;
+    top: 70%;
+    right: 0;
+    text-align: center;
+    
 }
 
 @media (max-width:1024px){
     .bannerTitle{
-        font-size: 30px;
-        width: 90%;
+        font-size: 23px;
+        letter-spacing: 1px;
+        
+    }
+    .bannerTitleTwo{
+        font-size: 23px;
+        letter-spacing: 1px;
+       
     }
     .banner{
         align-items: center;
+        height: 100vh;
     }
 }
 

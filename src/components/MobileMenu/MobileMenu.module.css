@@ -7,12 +7,14 @@
     left: 0;
     transition: .3s;
     background-color: rgb(34, 32, 32);
+    max-height: 80vh;
+    overflow-y: scroll;
 
 }
 .searchingBar{
     
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 5px 20px;
     gap: 10px;

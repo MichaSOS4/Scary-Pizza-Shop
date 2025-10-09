@@ -61,11 +61,20 @@ function Slider(){
         },
     ]
     const changeSlideRight = ()=>{
-        
-    setCounterSlide(prevSlide => prevSlide += 1)
-    if(counterSlide >= 2){
-        setCounterSlide(0)
-    }
+        if(window.innerWidth > 1024){
+            setCounterSlide(prevSlide => prevSlide += 1)
+            if(counterSlide >= 2){
+                setCounterSlide(0)
+            }
+        }
+        if(window.innerWidth < 1024){
+                setCounterSlide(prevSlide => prevSlide += 1)
+                 if(counterSlide >= 8){
+                setCounterSlide(0)
+            }
+
+        }
+    
     
     
         
@@ -74,22 +83,48 @@ function Slider(){
         
     }
     const changeSlideLeft = ()=>{
+        if(window.innerWidth > 1024){
         setCounterSlide(prevSlide => prevSlide -= 1)
     if(counterSlide <= 0){
         setCounterSlide(2)
     }
-        
-        
-        
+    
+}  
+        if(window.innerWidth < 1024){
+        setCounterSlide(prevSlide => prevSlide -= 1)
+        if(counterSlide <= 0){
+        setCounterSlide(8)
+                     }
+                        }
     }
     useEffect(()=>{
         
         switch(counterSlide){
-            case 1: slideIsideSlide.current.style.left = `calc(-100%)`;
+            case 1: if(window.innerWidth > 1024){
+                 slideIsideSlide.current.style.left = `calc(-100%)`;
+            }else if(window.innerWidth < 1024){
+                slideIsideSlide.current.style.left = `calc(-100% - 40px)`;
+            }
             break;
-            case 2: slideIsideSlide.current.style.left = `-200%`;
+            case 2: if(window.innerWidth > 1024){
+                 slideIsideSlide.current.style.left = `calc(-200%)`;
+            }else if(window.innerWidth < 1024){
+                slideIsideSlide.current.style.left = `calc(-200% - 40px)`;
+            }
             break;
             case 0:slideIsideSlide.current.style.left = `0`;
+            break;
+            case 3:slideIsideSlide.current.style.left = `calc(-300% - 60px)`;
+            break;
+            case 4:slideIsideSlide.current.style.left = `calc(-400% - 80px)`;
+            break;
+            case 5:slideIsideSlide.current.style.left = `calc(-500% - 100px)`;
+            break;
+            case 6:slideIsideSlide.current.style.left = `calc(-600% - 120px)`;
+            break;
+            case 7:slideIsideSlide.current.style.left = `calc(-700% - 140px)`;
+            break;
+            case 8:slideIsideSlide.current.style.left = `calc(-800% - 160px)`;
             break;
             
 
@@ -102,6 +137,9 @@ function Slider(){
 
 
     },[counterSlide])
+    window.addEventListener('resize',()=>{
+        setCounterSlide(0)
+    })
 
 
 
@@ -110,7 +148,7 @@ return(
         <h1 className = {styles.sliderTitle}>Najczęściej wybierane pozycje</h1>
 
         <div className = {styles.sliderBar}>
-        <span onClick={changeSlideLeft}><ArrowLeft color='rgb(235, 129, 7)' /></span>
+        <span className = {styles.left} onClick={changeSlideLeft}><ArrowLeft color='rgb(235, 129, 7)' /></span>
         <div className = {styles.slides}>
             <div ref={slideIsideSlide} className={styles.slidesInside}>
 
@@ -128,7 +166,7 @@ return(
             
 
         </div>
-        <span onClick={changeSlideRight}><ArrowRight color='rgb(235, 129, 7)' /></span>
+        <span className = {styles.right} onClick={changeSlideRight}><ArrowRight color='rgb(235, 129, 7)' /></span>
         </div>
 
 

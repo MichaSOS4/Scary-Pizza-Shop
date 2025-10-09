@@ -1,6 +1,6 @@
 .sliderWrap{
     width: 100%;
-    height: 300px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,6 +20,7 @@
     padding: 10px 20px;
     height: 80%;
     gap: 20px;
+    position: relative
 }
 .slides{
     flex-grow: 1;
@@ -28,6 +29,9 @@
     
     position: relative;
 }
+
+
+
 .slidesInside{
     position: absolute;
     left: 0;
@@ -73,6 +77,36 @@
 .singleSlide:hover.singleSlide h4{
     font-size: 20px;
 }
+
+
+}
+@media(max-width:1024px){
+
+.singleSlide{
+ min-width: 100%;
+   
+   
+   
+  
+   
+    
+}
+.left{
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    border: 2px solid rgb(235, 129, 7);
+    padding: 3px;
+    border-radius: 5px;
+}
+.right{position: absolute;
+    right: 10px;
+    top: -40px;
+    border: 2px solid rgb(235, 129, 7);
+    padding: 3px;
+    border-radius: 5px;
+}
+
 
 }
 
